@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #18150c;
+    --bgSoft: #272214;
+    --text: white;
+    --textSoft: #e5e5e5;
+    --btn: rgb(13, 54, 177);
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    overflow: -moz-scrollbars-vertical;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+body::-webkit-scrollbar-track {
+    background: var(--bgSoft);
+}
+body::-webkit-scrollbar-thumb {
+    background: var(--bg);
+}
+
+
+@layer utilities {
+    .container {
+        @apply max-w-[1336px] m-auto px-[20px] py-[10px] 1024:px-[50px] 1024:py-[30px] min-h-[100vh] flex flex-col justify-between
+    }
+
+    .logo {
+        @apply text-[30px] font-bold
+    }
+
+    .active {
+        @apply bg-white text-black
+    }
+
+    .link {
+        @apply min-w-[100px] px-4 py-2 rounded-[20px] font-medium text-center flex justify-center items-center
+    }
+
+    .auth-link {
+        @apply py-2 px-4 bg-white text-black text-lg font-bold flex justify-center items-center
+    }
+
+    .removeArrows {
+        @apply [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none
+    }
+
+    .forChildInputs {
+        @apply [&>input]:bg-slate-600 [&>input]:py-2 [&>input]:px-2 [&>textarea]:bg-slate-600 [&>textarea]:py-2 [&>textarea]:px-2
+    }
+}
